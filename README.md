@@ -23,5 +23,3 @@ Si quieres ayudarme a mejorar este proyecto, por favor sigue estos pasos:
 
 Puedes probarlo en HOST_NETLIFY = [https://ecommerce-carrito-compras.netlify.app/]
 
-**Licencia**
-Este proyecto está bajo la Licencia MIT.
