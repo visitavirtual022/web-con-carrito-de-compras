@@ -15,6 +15,13 @@ function cargarEventListener () {
   // Elimina cursos del carrito
   carrito.addEventListener('click', borrarCurso);
 
+  // Muestra los cursos del local Storage
+  document.addEventListener('DOMContentLoaded', () => {
+    articulosCarrito = JSON.parse( localStorage.getItem('carrito') ) || [];
+
+    carritoHtml();
+  })
+
   // Vaciar el carrito
   vaciarCarritoBtn.addEventListener('click', ( ) => {
   articulosCarrito = [];   // --> reseteamos el arreglo
@@ -114,7 +121,16 @@ function carritoHtml(){     //--> va a generar el htmml basado en este carrito d
     // --> Agrega el html del carrito en el tbody
     contenedorCarrito.appendChild(row);
   })
+
+    // --> Agregar el carrito de comprar al localStorage <<--
+    sincronizarStorage();
+
 }
+
+function sincronizarStorage() {
+  localStorage.setItem( 'carrito', JSON.stringify(articulosCarrito));
+}
+
 
 // --> Funcion para limpiar el html (eliminar loc cursos duplicados)
 function limpiarHtml(){
